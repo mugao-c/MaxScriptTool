@@ -29,6 +29,10 @@ void Logging::setLevel(const LogLevel &level)
 void Logging::setLogFilePath(const QString &filepath)
 {
     mLogFilePath = filepath;
+    QDir dir = QFileInfo(filepath).absoluteDir();
+    if (!dir.exists()) {
+        dir.mkpath(dir.absolutePath());
+    }
     QFile* file = new QFile(filepath);
     if (file->open(QIODevice::Append))
     {

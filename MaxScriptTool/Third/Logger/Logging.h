@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include <QFile>
+#include <QMetaType>
 
 class Logging : public QObject
 {

@@ -32,7 +32,7 @@ QString makeString(const char* format, Args ...args)
 // 配置日志输出文件
 #define SET_LOG_FILE_PATH(FilePath) emit GLogger->setLogFilePath(FilePath)
 
-#define QStringParam(str) str.toStdString().c_str()
+#define QStringParam(str) (str).toStdString().c_str()
 //
 #define LOG_DEBUG(LogCategory, format, ...) LogCategory.log_noop();\
     emit GLogger->log(Logging::LogInfo(Logging::LL_Debug, #LogCategory, __FILE__, __FUNCTION__, __LINE__), makeString(format, ##__VA_ARGS__));

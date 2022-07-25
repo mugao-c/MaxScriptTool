@@ -6,6 +6,8 @@ Q_GLOBAL_STATIC(Logger, _Logger)
 Logger::Logger(QObject *parent)
     : QObject{parent}
 {
+    qRegisterMetaType<Logging::LogInfo>("Logging::LogInfo");
+    qRegisterMetaType<Logging::LogInfo>("Logging::LogInfo&");
     mLogging = new Logging;
     mThread = new QThread;
     mLogging->moveToThread(mThread);
@@ -14,8 +16,6 @@ Logger::Logger(QObject *parent)
     connect(this, &Logger::log, mLogging, &Logging::log);
     connect(this, &Logger::setLogFilePath, mLogging, &Logging::setLogFilePath);
     mThread->start();
-
-
 }
 
 Logger::~Logger()
