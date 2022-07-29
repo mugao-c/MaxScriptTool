@@ -1,0 +1,22 @@
+{
+    "version": 0.1,
+    "groups": [{
+            "name": "group1",
+            "groups": []
+        },
+        {
+            "name": "group2",
+            "groups": []
+        }
+    ],
+    "group1": [{
+        "display_name": "快捷文件夹访问",
+        "desc": "快速访问自定义的文件夹",
+        "type": "mzp",
+        "url": "http://maxscript.com/test.ms",
+        "doc_url": "http://maxscript.com/test.md",
+        "icon": "http://maxscript.com/test.bmp",
+        "appversion": "2020",
+        "version": "1.0"
+    }]
+}
